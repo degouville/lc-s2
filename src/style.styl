@@ -32,40 +32,6 @@ body
 
   background #111E
 
-  .texts
-    width 50vw
-    height 100vh
-
-  .texts
-    color #FFF8
-    overflow hidden
-    background #FFF1
-    clip-path: inset(.5rem round .5rem)
-
-    article
-      position relative
-      left -200vw
-      width 300vw
-      height 20vh
-      transition all 1.5s cubic-bezier(0.8, 0.0, 0.2, 1)
-
-      &:nth-child(1)
-        margin 0 0 0 30%
-        font-weight 700
-      &:nth-child(2)
-        margin 0 0 0 -5%
-        font-weight 100
-      &:nth-child(3), &:nth-child(5)
-        margin 0 0 0 50%
-        font-weight 500
-
-
-      span
-        display inline-block
-        width 100vw
-        font-size 7vw
-        text-transform capitalize
-
   .shapes
     display flex
     flex-direction column
@@ -73,7 +39,7 @@ body
     align-items center
     gap 5vmin
 
-    width 50vw
+    width 100vw
     height 100vh
 
     .currentShape
@@ -94,7 +60,7 @@ body
         display flex
         justify-content center
         align-items center
-        font-size 4em
+        font-size 6vmin
         text-transform uppercase
         font-weight 900
         letter-spacing -.05em

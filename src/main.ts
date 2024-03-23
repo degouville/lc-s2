@@ -15,7 +15,7 @@ const clipPaths: Record<Shape, string> = {
   octagon:
     '30% 0,  70%   0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%',
   pentagon:
-    '40% 0, 100% 20%, 100% 20%, 100% 80%, 100% 80%, 40% 100%, 0 50%, 0 50%'
+    '35% 0, 100% 25%, 100% 25%, 100% 75%, 100% 75%, 35% 100%, 0 50%, 0 50%'
 }
 const shapes = Object.keys(clipPaths) as Shape[]
 const degrees = [0, 45, 90]
