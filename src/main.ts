@@ -2,19 +2,11 @@ import './style.styl'
 
 const $app = document.querySelector('#app') as HTMLElement
 const $ul = document.createElement('ul') as HTMLUListElement
-const $texts = document.createElement('section') as HTMLElement
 const $shapes = document.createElement('section') as HTMLElement
 const $currentShape = document.createElement('article') as HTMLElement
 
-$texts.className = 'texts'
 $shapes.className = 'shapes'
 $currentShape.className = 'currentShape'
-
-const words = [
-  ['semantic', 'link', 'hypertext', 'dataset', 'markup'],
-  ['alignement', 'responsive', 'color', 'animation', 'cubic-bezier'],
-  ['querySelector', 'onload', 'event', 'delay', 'functional']
-]
 
 type Shape = 'rhombus' | 'octagon' | 'pentagon'
 const clipPaths: Record<Shape, string> = {
@@ -70,13 +62,6 @@ const goToNext = () => {
     current = (current + 1) % shapes.length
   }, 0)
 
-  $texts.querySelectorAll('article').forEach(($article, i) => {
-    $article.style.cssText = `
-      transform: translateX(${current * 33.3}%);
-      transition-delay: ${i * 0.05}s;
-    `
-  })
-
   updateActiveShape()
   updateBodyBackground()
 }
@@ -95,24 +80,8 @@ const updateActiveShape = () => {
   })
 }
 
-const mix = (_: unknown, i: number) => words.reverse().map(row => row[i])
-words[0].map(mix).forEach((article, i) => {
-  const $article = document.createElement('article')
-  $article.style.cssText = `transition-delay: ${i * 0.2}s;`
-
-  article.forEach(word => {
-    const $span = document.createElement('span')
-    $span.textContent = word
-
-    $article.appendChild($span)
-  })
-
-  $texts.appendChild($article)
-})
-
 $shapes.appendChild($currentShape)
 $shapes.appendChild($ul)
-$app.appendChild($texts)
 $app.appendChild($shapes)
 
 window.onload = goToNext
