@@ -1,0 +1,132 @@
+geist(weight, woff2-url, woff-url)
+  @font-face
+    font-family 'Geist Sans'
+    font-style normal
+    font-display swap
+    font-weight weight
+    src url(woff2-url) format('woff2'), url(woff-url) format('woff')
+
+geist(100, 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-100-normal.woff2', 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-100-normal.woff')
+geist(300, 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-300-normal.woff2', 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-300-normal.woff')
+geist(500, 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2', 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff')
+geist(700, 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff2', 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff')
+geist(900, 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-900-normal.woff2', 'https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-900-normal.woff')
+
+@import url('https://cdn.jsdelivr.net/npm/gotham-fonts@1.0.3/css/gotham-rounded.min.css')
+
+body
+  padding 0
+  margin 0
+  transition background 1.5s cubic-bezier(0.8, 0.0, 0.2, 1)
+
+#app
+  position fixed
+  width 100vw
+  height 100vh
+
+  display flex
+  justify-content space-between
+  align-items center
+
+  font-family 'Geist Sans', sans-serif
+
+  background #111E
+
+  .texts
+    width 50vw
+    height 100vh
+
+  .texts
+    color #FFF8
+    overflow hidden
+    background #FFF1
+    clip-path: inset(.5rem round .5rem)
+
+    article
+      position relative
+      left -200vw
+      width 300vw
+      height 20vh
+      transition all 1.5s cubic-bezier(0.8, 0.0, 0.2, 1)
+
+      &:nth-child(1)
+        margin 0 0 0 30%
+        font-weight 700
+      &:nth-child(2)
+        margin 0 0 0 -5%
+        font-weight 100
+      &:nth-child(3), &:nth-child(5)
+        margin 0 0 0 50%
+        font-weight 500
+
+
+      span
+        display inline-block
+        width 100vw
+        font-size 7vw
+        text-transform capitalize
+
+  .shapes
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    gap 5vmin
+
+    width 50vw
+    height 100vh
+
+    .currentShape
+      position relative
+      width 30vmin
+      height 30vmin
+
+      display flex
+      justify-content center
+      align-items center
+
+      transition all 1.5s cubic-bezier(.9, .0, .1, 1.2)
+
+      article
+        position absolute
+        width 110%
+        height 110%
+        display flex
+        justify-content center
+        align-items center
+        font-size 4em
+        text-transform uppercase
+        font-weight 900
+        letter-spacing -.05em
+
+        transition all 1.5s cubic-bezier(.9, .0, .1, 1.2)
+
+        &:nth-child(1)
+          background #e42
+        &:nth-child(2)
+          background #24e
+          rotate -45deg
+        &:nth-child(3)
+          background #fd4
+          rotate -90deg
+
+    ul
+      padding 0
+      display flex
+      flex-direction row
+      justify-content center
+      gap 2vmin
+      color #FFF8
+
+      li
+        background #FFF
+        width 5vmin
+        height 5vmin
+        opacity .5
+        translate 0
+        transition all 1s 
+        transition-timing-function cubic-bezier(0.8, 0.0, 0.2, 1.2)
+
+        &.isActive
+          opacity 1
+          translate 0 -2vmin
